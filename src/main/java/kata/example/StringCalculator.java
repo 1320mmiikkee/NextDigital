@@ -1,4 +1,5 @@
 package kata.example;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
 
@@ -16,7 +17,8 @@ public class StringCalculator {
             numbers = numbers.substring(endOfDelimiter + 1);
         }
 
-        String[] values = numbers.split(delimiter);
+        // String[] values = numbers.split(delimiter);
+        String[] values = numbers.split(Pattern.quote(delimiter));
 
         int sum = 0;
         for (String value : values) {
