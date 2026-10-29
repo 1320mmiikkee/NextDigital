@@ -28,4 +28,10 @@ public class StringCalculatorTest {
         StringCalculator calculator = new StringCalculator();
         assertEquals(30, calculator.add("//::\n3::4::20::1::2"));
     }
+
+    @Test
+    void shouldAddWithSpecialCharacterDelimiter() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(6, calculator.add("//|\n1|2|3"));
+    }
 }
