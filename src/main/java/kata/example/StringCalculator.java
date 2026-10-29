@@ -8,7 +8,15 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] values = numbers.split(",");
+        String delimiter = ",";
+
+        if (numbers.startsWith("//")) {
+            int endOfDelimiter = numbers.indexOf("\n");
+            delimiter = numbers.substring(2, endOfDelimiter);
+            numbers = numbers.substring(endOfDelimiter + 1);
+        }
+
+        String[] values = numbers.split(delimiter);
 
         int sum = 0;
         for (String value : values) {
