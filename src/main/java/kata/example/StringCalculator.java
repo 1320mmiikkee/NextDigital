@@ -8,7 +8,14 @@ public class StringCalculator {
             return 0;
         }
 
-        return Integer.parseInt(numbers);
+        String[] values = numbers.split(",");
+
+        int sum = 0;
+        for (String value : values) {
+            sum += Integer.parseInt(value);
+        }
+
+        return sum;
 
     }
 
